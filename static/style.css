@@ -2,4 +2,14 @@
   letter-spacing: 1.2px;
   line-height: 1.7;
   color: #282828;
+  box-sizing: border-box;
+}
+
+p {
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+p[data-collapsed="true"] {
+  margin: 0;
 }

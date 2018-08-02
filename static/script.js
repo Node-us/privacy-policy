@@ -1,7 +1,8 @@
 window.addEventListener('load', function () {
   var titles = document.querySelectorAll('h2')
   titles.forEach(function (title) {
-    title.addEventListener('click', function () {
+    var event = 'ontouchend' in document ? 'touchend' : 'click'
+    title.addEventListener(event, function () {
       toggleParagraph(title)
     })
 

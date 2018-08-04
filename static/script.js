@@ -1,10 +1,22 @@
 window.addEventListener('load', function () {
+  var lastTouchTime = 0
+  var isMobile = 'ontouchend' in document
   var titles = document.querySelectorAll('h2')
+
   titles.forEach(function (title) {
-    var event = 'ontouchend' in document ? 'touchend' : 'click'
+    var event = isMobile ? 'touchend' : 'click'
     title.addEventListener(event, function () {
+      if (isMobile && Date.now() - lastTouchTime > 500) {
+        return
+      }
       toggleParagraph(title)
     })
+    if (isMobile) {
+      title.addEventListener('touchstart', function () {
+        lastTouchTime = Date.now()
+        toggleParagraph(title)
+      })
+    }
 
     toggleParagraph(title)
 

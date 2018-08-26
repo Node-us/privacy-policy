@@ -5,10 +5,6 @@
   box-sizing: border-box;
 }
 
-h2 {
-  -webkit-user-select: none;
-}
-
 p {
   overflow: hidden;
   transition: height 0.3s ease-out;

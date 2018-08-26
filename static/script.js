@@ -14,7 +14,6 @@ window.addEventListener('load', function () {
     if (isMobile) {
       title.addEventListener('touchstart', function () {
         lastTouchTime = Date.now()
-        toggleParagraph(title)
       })
     }
 
